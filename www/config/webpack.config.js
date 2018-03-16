@@ -44,15 +44,14 @@ module.exports = {
 			}
 		]
 	},
-	/*
-	performance: {
-		maxEntrypointSize: 300000,
-		hints: 'warning'
-	},
-	*/
 	plugins: [
 		new ExtractTextPlugin({
 			filename: 'style.css'
+		}),
+		new webpack.DefinePlugin({
+			'process.env': {
+				NODE_ENV: '"production"'
+			}
 		})
 	]
 };
