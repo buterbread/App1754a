@@ -6,13 +6,13 @@ if [ -f timestamp_indexjs.txt ]; then
     if [ $a == $b ]; then
         echo "- No change in index.js"
     else
-        echo "- Calling Browserify (timestamp was changed)"
+        echo "- Weback Build"
         echo $b>timestamp_indexjs.txt
-        browserify -t vueify -e www/js/index.js -o www/build/build.js
+        npm run build
     fi
 else
-    echo "- Calling Browserify (First run, no timestamp)"
+    echo "- Weback Build"
     echo $b>timestamp_indexjs.txt
-    browserify -t vueify -e www/js/index.js -o www/build/build.js
+    npm run build
 fi
 echo "[before_build] End"
